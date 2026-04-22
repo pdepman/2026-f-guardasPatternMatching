@@ -55,3 +55,19 @@ salirCampeon club = club { cantTitulos = cantTitulos club + 1} -- esta línea y 
 
 -- bla bla bla 
 
+data Figura = Pelota { color :: String } | LogoUTN | MedioFigura deriving (Show)
+
+caja :: Figura -> Figura
+caja (Pelota _) = Pelota { color = "Azul" }
+caja LogoUTN = Pelota { color = "Rosa" }
+caja MedioFigura = Pelota { color = "Celeste" } -- Variable Anonima o Wilcard Pattern
+
+
+f :: Number -> String
+f 2 = "hola"
+f 3 = "chau"
+f _ = "puedo irme?" -- Variable anónima
+
+legalParaTenis :: Figura -> Bool
+legalParaTenis (Pelota "Amarilla") = True
+legalParaTenis _ = False
